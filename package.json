@@ -8,6 +8,12 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0"
+    "@nuxtjs/supabase": "^0.3.0",
+    "nuxt": "3.0.0",
+    "sass": "^1.57.1"
+  },
+  "dependencies": {
+    "mdi": "^2.2.43",
+    "vuetify": "^3.1.0"
   }
 }
