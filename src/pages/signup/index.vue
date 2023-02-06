@@ -4,3 +4,8 @@
     <template v-slot:submitText>登録</template>
   </TheAuth>
 </template>
+<!-- <script setup>
+definePageMeta({
+  middleware: 'auth'
+})
+</script> -->

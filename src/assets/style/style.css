@@ -2,3 +2,20 @@ html {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 400;
 }
+
+a:visited{
+  color: inherit;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+a:active{
+  color: inherit;
+}

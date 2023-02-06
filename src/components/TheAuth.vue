@@ -46,7 +46,7 @@ const emailRules = [
 
 const passwordRules = [
   (v: any) => !!v || 'パスワードを入力してください',
-  (v: any) => /^[\w-]{6,72}$/.test(v) || '6文字以上72文字以下で入力してください．'
+  (v: any) => isSignup ? (/^[\w-]{6,72}$/.test(v) || '6文字以上72文字以下で入力してください．') : (/^[\w-]{6,72}$/.test(v) || '入力してください')
 ]
 
 const submit = async () => {
@@ -70,7 +70,10 @@ const submit = async () => {
     state.value = 'エラーが発生しました';
     message.value = session.error.message;
   } else {
-    state.value = "認証メッセージを送信しました"
+    state.value = isSignup ? "認証メッセージを送信しました" : "ログインしました"
+  }
+  if (!isSignup) {
+    return navigateTo('/dashboard')
   }
 };
 
