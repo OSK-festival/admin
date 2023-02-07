@@ -8,12 +8,12 @@
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" location="right" temporary>
       <v-container>
-        <v-btn variant="flat" color="secondary" prepend-icon="mdi-login" class="my-2" to="/signin">
+        <!-- <v-btn variant="flat" color="secondary" prepend-icon="mdi-login" class="my-2" to="/signin">
           ログイン
-        </v-btn>
-        <v-btn variant="flat" color="secondary" prepend-icon="mdi-login" class="my-2" to="/dashboard">
+        </v-btn> -->
+        <!-- <v-btn variant="flat" color="secondary" prepend-icon="mdi-login" class="my-2" to="/dashboard">
           アカウントページ
-        </v-btn>
+        </v-btn> -->
         <v-btn variant="flat" color="secondary" prepend-icon="mdi-login" class="my-2" @click.stop="logout">
           サインアウト
         </v-btn>
@@ -40,6 +40,5 @@ function logout() {
   const client = useSupabaseAuthClient()
   client.auth.signOut()
   drawer.value = false;
-  return navigateTo('/');
 }
 </script>

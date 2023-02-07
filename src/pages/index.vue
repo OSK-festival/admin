@@ -2,6 +2,12 @@
   <v-alert color="red" icon="mdi-alert" title="ログインしてください" variant="flat">
     これは各団体の代表者のためのサイトです。会員登録をしていない団体の代表者はすぐに幹部へ連絡してください。
   </v-alert>
+  <v-container>
+    <TheAuth isSignup="false">
+      <template v-slot:title>ログイン</template>
+      <template v-slot:submitText>ログイン</template>
+    </TheAuth>
+  </v-container>
 </template>
 
 <script setup>
@@ -16,6 +22,14 @@ if (user.value) {
 } else {
   console.log("ログインしていません");
   console.log(user.value);
-  navigateTo('/');
+  // navigateTo('/signin');
 }
+
+watchEffect(() => {
+  if (user.value) {
+    console.log(user.value);
+    // navigateTo('/tasks')
+    return navigateTo('/dashboard');
+  }
+})
 </script>

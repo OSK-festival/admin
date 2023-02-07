@@ -14,6 +14,10 @@
     <div>
       {{ message }}
     </div>
+    <!-- <v-progress-circular v-if="submitting" indeterminate color="red"></v-progress-circular> -->
+    <v-overlay :model-value="submitting" class="align-center justify-center">
+      <v-progress-circular color="primary" indeterminate size="64"></v-progress-circular>
+    </v-overlay>
   </div>
 </template>
 <script lang="ts" setup>
@@ -30,6 +34,7 @@ let isSignup = (props.isSignup == "true");
 console.log(isSignup);
 const isValid = ref(false);
 const loading = ref(false);
+const submitting = ref(false);
 
 const state = ref("");
 const message = ref("");
@@ -66,15 +71,17 @@ const submit = async () => {
     })
   }
   console.log(session);
+
   if (session.error) {
     state.value = 'エラーが発生しました';
     message.value = session.error.message;
   } else {
-    state.value = isSignup ? "認証メッセージを送信しました" : "ログインしました"
+    submitting.value = true;
+    state.value = isSignup ? "認証メッセージを送信しました" : "読み込み中"
   }
+
   if (!isSignup) {
-    return navigateTo('/dashboard')
+    // return navigateTo('/dashboard')
   }
 };
-
 </script>
