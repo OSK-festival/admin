@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   srcDir: 'src/',
   runtimeConfig: {
     SUPABASA_URL: process.env.SUPABASE_URL,
@@ -22,7 +23,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    baseURL: "/admin",
+    baseURL: "/admin/",
     head: {
       meta: [
         // <meta name="viewport" content="width=device-width, initial-scale=1">
