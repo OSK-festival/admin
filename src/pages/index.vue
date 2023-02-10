@@ -25,11 +25,13 @@ if (user.value) {
   // navigateTo('/signin');
 }
 
+// watchEffect(() => {
 watchEffect(() => {
-  // if (user.value) {
-    console.log(user.value);
-    // navigateTo('/tasks')
+  if (user.value) {
+    // return navigateTo('/');
     return navigateTo('/dashboard');
+  }
+});
   // }
-})
+// })
 </script>
