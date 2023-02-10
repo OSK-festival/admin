@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   srcDir: 'src/',
   runtimeConfig: {
     SUPABASA_URL: process.env.SUPABASE_URL,
