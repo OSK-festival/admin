@@ -26,10 +26,10 @@ if (user.value) {
 }
 
 watchEffect(() => {
-  if (user.value) {
+  // if (user.value) {
     console.log(user.value);
     // navigateTo('/tasks')
     return navigateTo('/dashboard');
-  }
+  // }
 })
 </script>
