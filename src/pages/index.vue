@@ -13,7 +13,7 @@
 <script setup>
 
 
-const user = useSupabaseUser()
+const user = useSupabaseUser();
 // const user = useSupabaseAuthClient();
 console.log(user.value)
 if (user.value) {
@@ -26,12 +26,12 @@ if (user.value) {
 }
 
 // watchEffect(() => {
-watchEffect(() => {
-  if (user.value) {
-    // return navigateTo('/');
-    return navigateTo('/dashboard');
-  }
-});
+// watchEffect(() => {
+//   if (user.value) {
+//     // return navigateTo('/');
+//     return navigateTo('/dashboard');
+//   }
+// });
   // }
 // })
 </script>

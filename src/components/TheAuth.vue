@@ -42,6 +42,8 @@ const message = ref("");
 const email = ref("");
 const password = ref("");
 
+const user = useSupabaseUser();
+
 const client = useSupabaseClient();
 
 const emailRules = [
@@ -83,5 +85,11 @@ const submit = async () => {
   if (!isSignup) {
     // return navigateTo('/dashboard')
   }
+  watchEffect(() => {
+  if (user.value) {
+    // return navigateTo('/');
+    return navigateTo('/dashboard');
+  }
+});
 };
 </script>
