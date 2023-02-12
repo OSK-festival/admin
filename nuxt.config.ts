@@ -23,8 +23,8 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    baseURL: "/admin/",
-    cdnURL: "https://osk-festival.github.io/admin/",
+    // baseURL: "/admin/",
+    // cdnURL: "https://osk-festival.github.io/admin/",
     head: {
       meta: [
         // <meta name="viewport" content="width=device-width, initial-scale=1">
