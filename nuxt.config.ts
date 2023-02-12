@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    // baseURL: "/admin/",
+    baseURL: "/admin/",
     // cdnURL: "https://osk-festival.github.io/admin/",
     head: {
       meta: [
